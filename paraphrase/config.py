@@ -1,8 +1,8 @@
 class config(object):
     def __init__(self):
-        self.data_path='../data/quora/quora.pkl'                                #path of data for training language model
-        self.use_data_path='../data/quora/source.tok'                       #data path of original sentences
-        self.dict_path='../data/quora'                                                   #dictionary path
+        self.data_path='../data/quora/quora.txt'                                #path of data for training language model
+        self.use_data_path='./input/source.txt'                                   #data path of original sentences
+        self.dict_path='../data/quora/dict.pkl'                                                  #dictionary path
         self.pos_path='../POS/english-models'                                    #path for pos tagger
         self.emb_path='../data/quora/emb.pkl'                                    #word embedding path, used when config.sim=='word_max' or config.sim=='combine'
         self.skipthoughts_path='../skip_thought'                                  #path of skipthoughts, used when config.sim=='skipthoughts' or config.sim=='combine'
@@ -37,7 +37,7 @@ class config(object):
         self.sample_sentence_number=119
         
         self.search_size=100
-        self.use_output_path='./output/output_new_min_loss'         #output path
+        self.use_output_path='./output/output.txt'         #output path
       
         
         self.action_prob=[0.3,0.3,0.3,0.3]                                              #the prior of 4 actions
