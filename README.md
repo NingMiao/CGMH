@@ -49,10 +49,15 @@ CGMH is a sampling based model for constrained sentence generation, which can be
 - Training language models
   - For each task, first train a backward and a language model:  
       set `mode='forward'` and `mode='backward'` in `config.py` successively.  
-      run `crrection.py` / `paraphrase.py` / `key-gen.py` to train each model  
+      run `crrection.py` / `paraphrase.py` / `key-gen.py` to train each model. 
     
 - Generation
   - For generating new sample for each tasks:  
       set `mode='use'` and choose proper parameter in `config.py`.   
       run `crrection.py` / `paraphrase.py` / `key-gen.py` to sample.  
       outputs are in `output`.
+      
+ - Details
+   - You should install python packages above first or disable them in 'config.py'.
+   - Download 1-billion and quaro training data and put them in the data folder. For 1-billion, you can use a subset of the corpus to form 1-billion.txt. Use 'utils/dict_emb/dict_make.py' to make word dictionary and 'utils/dict_emb/emb_make.py' to make word embeddings.
+   - Be sure to set correct path for package and data in 'config.py'
