@@ -1,9 +1,9 @@
 import numpy as np
 import pickle as pkl
 
-glove_path='/data00/home/miaoning/data/glove/glove.840B.300d.txt'
-dict_path='/data00/home/miaoning/data/1-billion/tree/dict.pkl'
-emb_path='/data00/home/miaoning/data/1-billion/tree/emb.pkl'
+glove_path='../../data/glove/glove.840B.300d.txt'
+dict_path='../../data/1-billion/dict.pkl'
+emb_path='../../data/1-billion/emb.pkl'
 
 f=open(glove_path)
 emb=[]
