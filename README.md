@@ -41,6 +41,7 @@ CGMH is a sampling based model for constrained sentence generation, which can be
   - Rake
   - zPar
   - skipthoughts
+  - en (or pattern.en, but small modification of code is needed.)
   
 - word embedding
   - If you want to try using word embedding for paraphrase, you should download or train a word embedding first and place it at config.emb_path.
