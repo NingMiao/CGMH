@@ -51,7 +51,8 @@ CGMH is a sampling based model for constrained sentence generation, which can be
   - For each task, first train a backward and a language model:  
       set `mode='forward'` and `mode='backward'` in `config.py` successively.  
       run `crrection.py` / `paraphrase.py` / `key-gen.py` to train each model. 
-    
+  - For a pretrained language model, please download a tar.gz file from https://drive.google.com/open?id=1GnCpLMyqNXUJG9P28YI9LQcCeFWzbx_g and extract it under the model folder.
+
 - Generation
   - For generating new sample for each tasks:  
       set `mode='use'` and choose proper parameter in `config.py`.   
