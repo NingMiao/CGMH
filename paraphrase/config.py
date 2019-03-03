@@ -1,7 +1,7 @@
 class config(object):
     def __init__(self):
         self.data_path='../data/quora/quora.txt'                                #path of data for training language model
-        self.use_data_path='./input/source.txt'                                   #data path of original sentences
+        self.use_data_path='./input/input.txt'                                   #data path of original sentences
         self.dict_path='../data/quora/dict.pkl'                                                  #dictionary path
         self.pos_path='../POS/english-models'                                    #path for pos tagger
         self.emb_path='../data/quora/emb.pkl'                                    #word embedding path, used when config.sim=='word_max' or config.sim=='combine'
@@ -42,7 +42,7 @@ class config(object):
         
         self.action_prob=[0.3,0.3,0.3,0.3]                                              #the prior of 4 actions
         self.threshold=0.1
-        self.sim='word_max'                                                                  #matching model
+        self.sim='word_max'                                                               #matching model 'skipthoughts'/'word_max'/'combine'/None
         self.double_LM=False
         self.keyword_pos=True
         self.keyboard_input=False

@@ -102,15 +102,15 @@ def run_epoch(sess, model, input, sequence_length, target=None, mode='train'):
   #Runs the model on the given data.
   if mode=='train':
     #train language model
-    _,cost = sess.run([model.train_op, model.cost], feed_dict={model.input: input, model.target:target, model.sequence_length:sequence_length})
+    _,cost = sess.run([model._train_op, model._cost], feed_dict={model._input: input, model._target:target, model._sequence_length:sequence_length})
     return cost
   elif mode=='test':
     #test language model
-    cost = sess.run(model.cost, feed_dict={model.input: input, model.target:target, model.sequence_length:sequence_length})
+    cost = sess.run(model._cost, feed_dict={model._input: input, model._target:target, model._sequence_length:sequence_length})
     return cost
   else:
     #use the language model to calculate sentence probability
-    output_prob = sess.run(model.output_prob, feed_dict={model.input: input, model.sequence_length:sequence_length})
+    output_prob = sess.run(model._output_prob, feed_dict={model._input: input, model._sequence_length:sequence_length})
     return output_prob
 
 def main(_):

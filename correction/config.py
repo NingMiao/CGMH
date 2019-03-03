@@ -1,11 +1,12 @@
 class config(object):
     def __init__(self):
         self.data_path='../data/1-billion/1-billion.txt'                         #path of data for training language model
-        self.use_data_path='./input/sen.txt'                                        #data path of erroneous sentence for correction
+        self.use_data_path='./input/input.txt'                                        #data path of erroneous sentence for correction
         self.dict_path='../data/1-billion/dict.pkl'                                 #dictionary path
         self.emb_path='../data/1-billion/emb.pkl'                               #word embedding path, used when config.sim=='word_max' or config.sim=='combine'
         self.skipthoughts_path='../skip_thought'                                 #path of skipthoughts, used when config.sim=='skipthoughts' or config.sim=='combine'        
-        self.liguistic_path='../linguistics'                                              #path of data of liguistics package
+        #self.liguistic_path='../linguistics'                                              #path of data of liguistics package
+        self.liguistic_path='/data00/home/miaoning/util/linguistics'
         self.pos_path='../POS/english-models'                                    #path for pos tagger
         self.dict_size=50000
         self.vocab_size=50003
@@ -43,7 +44,7 @@ class config(object):
         self.action_prob=[0.3,0.3,0.3,0.1]                                          #the prior of 4 actions
         self.threshold=0.1
         self.sim=None                                                                      #matching model
-        self.sim_word=True
+        self.sim_word=True                                                             #if set to True, then word embedding is needed
         self.double_LM=False
         self.keyword_pos=False
         self.keyboard_input=False                                                     #input from keyboard

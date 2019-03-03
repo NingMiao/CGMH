@@ -13,7 +13,7 @@ if config.sim=='word_max' or config.sim=='combine':
 import sys
 sys.path.insert(0,config.skipthoughts_path)
 sys.path.insert(0,config.dict_path)
-sys.path.insert(0,'../utils')
+sys.path.insert(0,'../utils/dict_emb')
 from dict_use import dict_use
 dict_use=dict_use(config.dict_path)
 sen2id=dict_use.sen2id
