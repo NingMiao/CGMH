@@ -32,34 +32,40 @@ CGMH is a sampling based model for constrained sentence generation, which can be
 - python
   - `==2.7`
 
-- TensorFlow
-  - `== 1.3.0`
-  
 - python packages
+  - TensorFlow `== 1.3.0` (other versions are not tested)
   - numpy
   - pickle
-  - Rake
-  - zPar
-  - skipthoughts
-  - en (or pattern.en, but small modification of code is needed.)
+  - Rake (pip install python-rake)
+  - zpar (pip install python-zpar, download model file from https://github.com/frcchang/zpar/releases/download/v0.7.5/english-models.zip and extract it to `POS/english-models`)
+  - skipthoughts (needed only when config.sim=='skipthoughts')
+  - en (get en from https://www.nodebox.net/code/index.php/Linguistics and put under `liguistics/`)
   
 - word embedding
-  - If you want to try using word embedding for paraphrase, you should download or train a word embedding first and place it at config.emb_path.
+  - If you want to try using word embedding for paraphrase, you should download or train a word embedding first and place it at config.emb_path and set config.emb_path='word_max'.
+
+## Language model download ##
+- For a pretrained language model, please download the following file and extract it under `model/`.
+- Correction and key-gen: https://drive.google.com/open?id=1L3q-xGD3lHNETfibERTIh-ciCXmzRs3i
+- Paraphrase: https://drive.google.com/open?id=1kTjnqO69CjwpBXwPtOPT6v7Ur7ro5nRR. Please put the `.pkl` file under data/quora 
+
+## Word embedding download ##
+- For a pretrained word embedding, please download the following file.
+- Correction and key-gen: https://drive.google.com/open?id=1q79Dvrx3eapffHL4ApfrT0XpOgm3sKKF. Please put the `.pkl` file under data/1-billion 
+- Paraphrase: https://drive.google.com/open?id=1ggEdFyLIrr9sjfG1SHxjyHgOYNKy3ySE. Please put the `.pkl` file under data/quora 
 
 ## Running ##
 - Training language models
   - For each task, first train a backward and a language model:  
       set `mode='forward'` and `mode='backward'` in `config.py` successively.  
-      run `crrection.py` / `paraphrase.py` / `key-gen.py` to train each model. 
-  - For a pretrained language model, please download a tar.gz file from https://drive.google.com/open?id=1vYJbbXl47m0mfSupe_EuugTNGT6sfdpG and extract it under `model`.
+      run `python` `correction.py` / `paraphrase.py` / `key-gen.py` to train each model. 
 
 - Generation
   - For generating new sample for each tasks:  
       set `mode='use'` and choose proper parameter in `config.py`.   
-      run `crrection.py` / `paraphrase.py` / `key-gen.py` to sample.  
+      give inputs in 'input/input.txt'
+      run `python` `correction.py` / `paraphrase.py` / `key-gen.py` to generate.  
       outputs are in `output`.
       
  - Details
-   - You should install python packages above first or disable them in 'config.py'.
-   - Download 1-billion and quora training data and put them in the data folder. For 1-billion, you can use a subset of the corpus to form 1-billion.txt. Use 'utils/dict_emb/dict_make.py' to make word dictionary and 'utils/dict_emb/emb_make.py' to make word embeddings.
-   - Be sure to set correct path for package and data in 'config.py'.
+   - Make sure that paths for package and data are correctly set in 'config.py'.
